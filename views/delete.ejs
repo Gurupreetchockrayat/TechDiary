@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    
+    <div class="main w-full min-h-screen bg-zinc-900">
+        <a  class="text-blue-600 inline-block m-6" href="/"><Button>GO BACK</Button></a>
+        <div class="form p-20 text-white">
+            <form action="/delete" method="post">
+                
+                <p class="text-center"> ARE YOU SURE YOU WANT TO REMOVE THIS MEMORY</p>
+                <div class="flex justify-center flex-col ">
+                    <input class='block px-5 py-3 bg-zinc-800  text-zinc-400 m-5 rounded-md outline-none text-center' type="text" value="<%= deletefile%>" name="deletefile">
+                    <input class= 'm-8 bg-red-600 px-5 py-2 rounded-md ' type="submit" value="REMOVE" >
+                </div>
+                
+            </form>
+        </div>
+      
+    </div>
+        
+    
+</body>
+</html>

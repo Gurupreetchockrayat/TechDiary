@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="main w-full min-h-screen bg-black">
+        <div class="flex justify-center h-16" >
+
+            <img  class='size-32  m-1' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRllLpoXdbY9hQ-vY6MDq0Obv3zETz1SZRZOQ&s">
+            <!-- <h1 class="text-blue-600 text-4xl text-center ">YOUR MEMORIES</h1> -->
+        </div>
+        <div class="form p-20 text-white">
+            <form action="/add" method="post">
+                <input class='block px-5 py-3 bg-zinc-800  w-full rounded-md outline-none' type="text" placeholder="Title of memories.." name="title">
+                <textarea  class='block min-h-52 px-5 py-3  mt-3 bg-zinc-800 resize-none w-full rounded-md outline-none ' placeholder="description here.." name="detail"></textarea>
+                <input class =' mt-5  bg-blue-600 px-5 py-2 rounded-md' type="submit" value="Add Memories">
+                
+            </form>
+        </div>
+        <div class="cards p-10 flex gap-10  flex-wrap p-10">
+
+            <% if(files.length > 0){%>
+                <% files.forEach((val)=> { %>
+                    <div class="card min-w-72 px-3 py-4 rounded-md bg-zinc-800 ">
+                        <h1 class="text-blue-600 text-3xl tracking-tighter"><%= val%></h1>
+                        <div class="flex w-full justify-between"> 
+                            <a class="text-green-500 inline-block mt-3"  href='files/<%= val%>'>DETAILS</a>
+                            <a class="text-yellow-500 inline-block mt-3"  href='/rename/<%= val %>'>RENAME</a>
+                            <a class="text-red-500 inline-block mt-3"  href='/delete/<%= val %>'>DELETE</a>
+                        </div>
+                        
+                        
+                    </div>
+                    <%})%>
+           <% } else {%>
+                 <h3 class="text-zinc-600 ">NO Memories ADDED..</h3>
+          <% }%>
+          
+         
+           
+            
+        </div>
+    </div>
+    
+</body>
+</html>
